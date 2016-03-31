@@ -129,11 +129,13 @@ export default class ModalPicker extends BaseComponent {
             }
         });
 
+        var modalSize = this.props.data.length > 10 ? 10 : this.props.data.length;
+
         return (
             <View style={[styles.overlayStyle, this.props.overlayStyle]}>
                 <View style={styles.optionContainer}>
                     <ScrollView keyboardShouldPersistTaps>
-                        <View style={{paddingHorizontal:10}}>
+                        <View style={{paddingHorizontal: this.modalSize}}>
                             {options}
                         </View>
                     </ScrollView>
